@@ -7,13 +7,11 @@ class Textfield_Contents extends StatelessWidget {
     required this.title,
     required this.labeltext,
     required this.hinttext,
-    // this.must,
   });
 
   final String title;
   final String labeltext;
   final String hinttext;
-  // bool? must = false;
 
   @override
   Widget build(BuildContext context) {
