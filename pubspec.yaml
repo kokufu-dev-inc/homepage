@@ -10,6 +10,7 @@ environment:
   sdk: '>=3.1.3 <4.0.0'
 
 dependencies:
+  flutter_hooks:
   go_router:
   # flutter_reverpod:
   google_fonts:

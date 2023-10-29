@@ -19,6 +19,7 @@ class Contact_Page extends StatelessWidget {
           children: [
             Contact_Firstview(),
             Contact_Textfield(),
+            Send_Button(),
             Fotter(),
           ],
         ),

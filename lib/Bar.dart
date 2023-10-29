@@ -16,7 +16,7 @@ class OriginalAppBar extends StatelessWidget implements PreferredSizeWidget {
               backgroundColor: Colors.white.withOpacity(0),
               shadowColor: Colors.white.withOpacity(0)),
           onPressed: (() {
-            context.push('/Home_Page');
+            context.pop('/Home_Page');
           }),
           child: const H3(
             text: 'Kokufu.dev',

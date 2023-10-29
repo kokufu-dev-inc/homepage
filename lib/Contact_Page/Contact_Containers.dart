@@ -46,20 +46,30 @@ class Contact_Textfield extends StatelessWidget {
       padding: const EdgeInsets.all(70),
       child: const Column(
         children: [
-          Textfield_Contents(
-              title: '指名、担当者名', labeltext: '苗字と名前を入力してください', hinttext: '苗字 名前'),
-          Textfield_Contents(
-              title: 'メールアドレス',
-              labeltext: '返信を受け取るメールアドレスを入力してください',
-              hinttext: 'xxxxxx@gmail.com'),
-          Textfield_Contents(
-              title: '電話番号',
-              labeltext: '臨時ご連絡できる電話番号を入力してください',
-              hinttext: '012-3456-789'),
-          Textfield_Contents(
-              title: '組織名、部署名',
-              labeltext: '所属する組織、部署の情報を入力してください',
-              hinttext: 'xxxx・xxxx')
+          Textfield_Personal(
+            title: '指名、担当者名',
+            labeltext: '苗字と名前を入力してください',
+            hinttext: '苗字 名前',
+          ),
+          Textfield_Personal(
+            title: '組織名、部署名',
+            labeltext: '所属する組織、部署の情報を入力してください',
+            hinttext: 'xxxx・xxxx',
+          ),
+          Textfield_Personal(
+            title: 'メールアドレス',
+            labeltext: '返信を受け取るメールアドレスを入力してください',
+            hinttext: 'kokufu@example.com',
+          ),
+          Textfield_Personal(
+            title: '電話番号',
+            labeltext: '臨時ご連絡できる電話番号を入力してください',
+            hinttext: '000-0000-0000',
+          ),
+          Textfield_Personal(
+              title: 'お問い合わせ内容',
+              labeltext: '詳細を記入してください',
+              hinttext: 'xxxxxxxxxxxxxxxxxxxxxxxxx')
         ],
       ),
     );
@@ -72,10 +82,9 @@ class Send_Button extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(bottom: 50),
       child: ElevatedButton(
-        onPressed: () {
-          debugPrint('');
-        },
+        onPressed: textprint,
         style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
         child: Container(
           padding: const EdgeInsets.all(10),
