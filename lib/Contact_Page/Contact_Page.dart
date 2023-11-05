@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/Bar.dart';
 import 'package:flutter_test_app/Contact_Page/Contact_Containers.dart';
-import 'package:flutter_test_app/Sidemenu.dart';
+import 'package:flutter_test_app/Contact_Page/Textfield.dart';
 
 class Contact_Page extends StatelessWidget {
   const Contact_Page({super.key});
@@ -14,15 +14,20 @@ class Contact_Page extends StatelessWidget {
         child: Sidemenu(),
       ),
       appBar: OriginalAppBar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Contact_Firstview(),
-            Contact_Textfield(),
-            Send_Button(),
-            Fotter(),
-          ],
-        ),
+      body: Stack(
+        children: [
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                Contact_Firstview(),
+                Contact_Textfield(),
+                Send_Button(),
+                Fotter(),
+              ],
+            ),
+          ),
+          Center(child: TotopModal()),
+        ],
       ),
     );
   }

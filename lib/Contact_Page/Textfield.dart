@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/Headings.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:go_router/go_router.dart';
 
 int? maxLines = 1;
-var controller = useTextEditingController();
-final personalnamecontroller = useTextEditingController();
-final mailcontroller = useTextEditingController();
-final tellcontroller = useTextEditingController();
-final companynamecontroller = useTextEditingController();
-final inquirycontroller = useTextEditingController();
+bool show = false;
+var controller = TextEditingController();
+var personalnamecontroller = TextEditingController();
+var mailcontroller = TextEditingController();
+var tellcontroller = TextEditingController();
+var companynamecontroller = TextEditingController();
+var inquirycontroller = TextEditingController();
 
-class Textfield_Personal extends HookWidget {
+class Textfield_Personal extends StatelessWidget {
   const Textfield_Personal(
       {super.key,
       required this.title,
@@ -25,12 +26,12 @@ class Textfield_Personal extends HookWidget {
   Widget build(BuildContext context) {
     var Must = Container(
       margin: const EdgeInsets.only(left: 10),
+      padding: const EdgeInsets.fromLTRB(8, 0, 8, 3),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.red.shade400,
       ),
       alignment: Alignment.topCenter,
-      padding: const EdgeInsets.fromLTRB(8, 0, 8, 3),
       child: const P(
         text: '必須',
         color: Colors.white,
@@ -74,7 +75,7 @@ class Textfield_Personal extends HookWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            margin: const EdgeInsets.only(bottom: 5),
+            margin: const EdgeInsets.only(bottom: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [P(text: title), Must],
@@ -96,9 +97,67 @@ class Textfield_Personal extends HookWidget {
   }
 }
 
+class TotopModal extends StatelessWidget {
+  const TotopModal({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+      visible: show,
+      child: Container(
+        alignment: Alignment.center,
+        color: Colors.white.withOpacity(0.7),
+        height: double.infinity,
+        width: double.infinity,
+        child: Container(
+          padding: const EdgeInsets.all(30),
+          height: 200,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                  color: Colors.black, style: BorderStyle.solid, width: 1)),
+          child: Column(
+            children: [
+              const H3(text: 'お問い合わせありがとうございます'),
+              const P(text: '確認後、数日中に返信させていただきます'),
+              Container(
+                margin: const EdgeInsets.only(top: 30),
+                child: ElevatedButton(
+                  onPressed: (() {
+                    context.push('/Home_Page');
+                    show = false;
+                    controller.clear();
+                    personalnamecontroller.clear();
+                    mailcontroller.clear();
+                    tellcontroller.clear();
+                    companynamecontroller.clear();
+                    inquirycontroller.clear();
+                  }),
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      side: const BorderSide(color: Colors.black, width: 1)),
+                  child: Container(
+                    padding: const EdgeInsets.all(10),
+                    child: const P(
+                      text: 'トップ画面に戻る',
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 textprint() {
   print(personalnamecontroller.text);
   print(mailcontroller.text);
   print(tellcontroller.text);
   print(companynamecontroller.text);
+  print(inquirycontroller.text);
+  show = true;
 }

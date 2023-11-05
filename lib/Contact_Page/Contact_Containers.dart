@@ -85,7 +85,10 @@ class Send_Button extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 50),
       child: ElevatedButton(
         onPressed: textprint,
-        style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.white,
+          side: const BorderSide(color: Colors.black, width: 1),
+        ),
         child: Container(
           padding: const EdgeInsets.all(10),
           child: const P(
