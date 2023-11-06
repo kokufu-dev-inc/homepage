@@ -109,11 +109,6 @@ class Sidemenu extends StatelessWidget {
         ListTile(
           title: const P(text: 'お問い合わせ'),
           onTap: () {
-            if (ContactViewModel.show) {
-              debugPrint('true');
-            } else {
-              debugPrint('false');
-            }
             debugPrint('お問い合わせ');
             context.push('/Contact_Page');
           },
