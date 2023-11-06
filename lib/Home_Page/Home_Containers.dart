@@ -199,7 +199,10 @@ class Contact_Form extends StatelessWidget {
               onPressed: () {
                 context.push('/Contact_Page');
               },
-              style: ElevatedButton.styleFrom(backgroundColor: Colors.white),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                side: const BorderSide(color: Colors.black, width: 1),
+              ),
               child: Container(
                 padding: const EdgeInsets.all(10),
                 child: const P(

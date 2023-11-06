@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/Contact_Page/Contact_ViewModel.dart';
 import 'package:flutter_test_app/Contact_Page/Textfield.dart';
 import 'package:flutter_test_app/Headings.dart';
 import 'package:flutter_test_app/theme.dart';
@@ -84,7 +85,7 @@ class Send_Button extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 50),
       child: ElevatedButton(
-        onPressed: textprint,
+        onPressed: ContactViewModel.instanceC.rebuildModal,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
           side: const BorderSide(color: Colors.black, width: 1),

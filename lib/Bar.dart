@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/Contact_Page/Textfield.dart';
+import 'package:flutter_test_app/Contact_Page/Contact_ViewModel.dart';
 import 'package:flutter_test_app/theme.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_test_app/Headings.dart';
@@ -109,6 +109,11 @@ class Sidemenu extends StatelessWidget {
         ListTile(
           title: const P(text: 'お問い合わせ'),
           onTap: () {
+            if (ContactViewModel.show) {
+              debugPrint('true');
+            } else {
+              debugPrint('false');
+            }
             debugPrint('お問い合わせ');
             context.push('/Contact_Page');
           },

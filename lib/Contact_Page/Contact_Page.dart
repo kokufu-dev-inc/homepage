@@ -26,7 +26,7 @@ class Contact_Page extends StatelessWidget {
               ],
             ),
           ),
-          Center(child: TotopModal()),
+          Center(child: ToTopModal()),
         ],
       ),
     );

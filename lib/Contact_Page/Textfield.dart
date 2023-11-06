@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/Contact_Page/Contact_ViewModel.dart';
 import 'package:flutter_test_app/Headings.dart';
 import 'package:go_router/go_router.dart';
-
-int? maxLines = 1;
-bool show = false;
-var controller = TextEditingController();
-var personalnamecontroller = TextEditingController();
-var mailcontroller = TextEditingController();
-var tellcontroller = TextEditingController();
-var companynamecontroller = TextEditingController();
-var inquirycontroller = TextEditingController();
 
 class Textfield_Personal extends StatelessWidget {
   const Textfield_Personal(
@@ -39,29 +31,29 @@ class Textfield_Personal extends StatelessWidget {
     );
     switch (title) {
       case '指名、担当者名':
-        maxLines = 1;
-        controller = personalnamecontroller;
+        ContactViewModel.maxLines = 1;
+        ContactViewModel.controller = ContactViewModel.personalnamecontroller;
         break;
 
       case '組織名、部署名':
-        maxLines = 1;
-        controller = companynamecontroller;
+        ContactViewModel.maxLines = 1;
+        ContactViewModel.controller = ContactViewModel.companynamecontroller;
         Must = Container();
         break;
 
       case 'メールアドレス':
-        maxLines = 1;
-        controller = mailcontroller;
+        ContactViewModel.maxLines = 1;
+        ContactViewModel.controller = ContactViewModel.mailcontroller;
         break;
 
       case '電話番号':
-        maxLines = 1;
-        controller = tellcontroller;
+        ContactViewModel.maxLines = 1;
+        ContactViewModel.controller = ContactViewModel.tellcontroller;
         break;
 
       case 'お問い合わせ内容':
-        maxLines = null;
-        controller = inquirycontroller;
+        ContactViewModel.maxLines = null;
+        ContactViewModel.controller = ContactViewModel.inquirycontroller;
         break;
 
       default:
@@ -82,8 +74,8 @@ class Textfield_Personal extends StatelessWidget {
             ),
           ),
           TextField(
-            maxLines: maxLines,
-            controller: controller,
+            maxLines: ContactViewModel.maxLines,
+            controller: ContactViewModel.controller,
             decoration: InputDecoration(
               border: const OutlineInputBorder(),
               labelText: labeltext,
@@ -97,13 +89,29 @@ class Textfield_Personal extends StatelessWidget {
   }
 }
 
-class TotopModal extends StatelessWidget {
-  const TotopModal({super.key});
+class ToTopModal extends StatefulWidget {
+  const ToTopModal({super.key});
+
+  @override
+  State<ToTopModal> createState() => _ToTopModalState();
+}
+
+class _ToTopModalState extends State<ToTopModal> {
+  void rebuildModal() {
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    // ViewModel内に、上記で定義した再描画メソッドを渡す
+    ContactViewModel.instanceC.textprint(rebuildModal);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: show,
+      visible: ContactViewModel.show,
       child: Container(
         alignment: Alignment.center,
         color: Colors.white.withOpacity(0.7),
@@ -125,13 +133,13 @@ class TotopModal extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: (() {
                     context.push('/Home_Page');
-                    show = false;
-                    controller.clear();
-                    personalnamecontroller.clear();
-                    mailcontroller.clear();
-                    tellcontroller.clear();
-                    companynamecontroller.clear();
-                    inquirycontroller.clear();
+                    ContactViewModel.show = false;
+                    ContactViewModel.controller.clear();
+                    ContactViewModel.personalnamecontroller.clear();
+                    ContactViewModel.mailcontroller.clear();
+                    ContactViewModel.tellcontroller.clear();
+                    ContactViewModel.companynamecontroller.clear();
+                    ContactViewModel.inquirycontroller.clear();
                   }),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
@@ -151,13 +159,4 @@ class TotopModal extends StatelessWidget {
       ),
     );
   }
-}
-
-textprint() {
-  print(personalnamecontroller.text);
-  print(mailcontroller.text);
-  print(tellcontroller.text);
-  print(companynamecontroller.text);
-  print(inquirycontroller.text);
-  show = true;
 }
