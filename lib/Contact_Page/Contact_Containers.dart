@@ -70,7 +70,7 @@ class Contact_Textfield extends StatelessWidget {
           TextFieldModel(
               title: 'お問い合わせ内容',
               labeltext: '詳細を記入してください',
-              hinttext: 'xxxxxxxxxxxxxxxxxxxxxxxxx')
+              hinttext: 'xxxxxxxxxxxxxxxxxxxxxxxxx'),
         ],
       ),
     );
@@ -84,19 +84,24 @@ class Send_Button extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(bottom: 50),
-      child: ElevatedButton(
-        onPressed: ContactViewModel.instanceC.rebuild,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.white,
-          side: const BorderSide(color: Colors.black, width: 1),
-        ),
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          child: const P(
-            text: '送信',
-            color: Colors.black,
+      child: Column(
+        children: [
+          ElevatedButton(
+            onPressed: ContactViewModel.instanceC.rebuild,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.white,
+              side: const BorderSide(color: Colors.black, width: 1),
+            ),
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              child: const P(
+                text: '送信',
+                color: Colors.black,
+              ),
+            ),
           ),
-        ),
+          const ErrorText(),
+        ],
       ),
     );
   }

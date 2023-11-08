@@ -3,8 +3,7 @@ import 'package:flutter_test_app/Contact_Page/Contact_ViewModel.dart';
 import 'package:flutter_test_app/Headings.dart';
 import 'package:go_router/go_router.dart';
 
-// ignore: must_be_immutable
-class TextFieldModel extends StatefulWidget {
+class TextFieldModel extends StatelessWidget {
   const TextFieldModel(
       {super.key,
       required this.title,
@@ -13,22 +12,6 @@ class TextFieldModel extends StatefulWidget {
   final String title;
   final String labeltext;
   final String hinttext;
-
-  @override
-  State<TextFieldModel> createState() => _TextFieldModelState();
-}
-
-class _TextFieldModelState extends State<TextFieldModel> {
-  void rebuildTextField() {
-    setState(() {});
-  }
-
-  @override
-  void initState() {
-    // ViewModel内に、上記で定義した再描画メソッドを渡す
-    ContactViewModel.instanceC.gettextfieldstate(rebuildTextField);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +28,7 @@ class _TextFieldModelState extends State<TextFieldModel> {
         color: Colors.white,
       ),
     );
-    switch (widget.title) {
+    switch (title) {
       case '指名、担当者名':
         ContactViewModel.maxLines = 1;
         ContactViewModel.controller = ContactViewModel.personalnamecontroller;
@@ -90,7 +73,7 @@ class _TextFieldModelState extends State<TextFieldModel> {
             margin: const EdgeInsets.only(bottom: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [P(text: widget.title), Must],
+              children: [P(text: title), Must],
             ),
           ),
           Form(
@@ -106,8 +89,8 @@ class _TextFieldModelState extends State<TextFieldModel> {
               controller: ContactViewModel.controller,
               decoration: InputDecoration(
                 border: const OutlineInputBorder(),
-                labelText: widget.labeltext,
-                hintText: widget.hinttext,
+                labelText: labeltext,
+                hintText: hinttext,
                 errorText: null,
               ),
             ),
@@ -140,7 +123,7 @@ class _ToTopModalState extends State<ToTopModal> {
   @override
   Widget build(BuildContext context) {
     return Visibility(
-      visible: ContactViewModel.show,
+      visible: ContactViewModel.modalshow,
       child: Container(
         alignment: Alignment.center,
         color: Colors.white.withOpacity(0.7),
@@ -160,16 +143,17 @@ class _ToTopModalState extends State<ToTopModal> {
               Container(
                 margin: const EdgeInsets.only(top: 30),
                 child: ElevatedButton(
-                  onPressed: (() {
+                  onPressed: () {
                     context.push('/Home_Page');
-                    ContactViewModel.show = false;
+                    ContactViewModel.modalshow = false;
+                    ContactViewModel.errortextshow = false;
                     ContactViewModel.controller.clear();
                     ContactViewModel.personalnamecontroller.clear();
                     ContactViewModel.mailcontroller.clear();
                     ContactViewModel.tellcontroller.clear();
                     ContactViewModel.companynamecontroller.clear();
                     ContactViewModel.inquirycontroller.clear();
-                  }),
+                  },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.white,
                       side: const BorderSide(color: Colors.black, width: 1)),
@@ -187,5 +171,37 @@ class _ToTopModalState extends State<ToTopModal> {
         ),
       ),
     );
+  }
+}
+
+class ErrorText extends StatefulWidget {
+  const ErrorText({super.key});
+
+  @override
+  State<ErrorText> createState() => _ErrorTextState();
+}
+
+class _ErrorTextState extends State<ErrorText> {
+  void rebuildModal() {
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    ContactViewModel.instanceC.geterrortextstate(rebuildModal);
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Visibility(
+        visible: ContactViewModel.errortextshow,
+        child: Container(
+          margin: const EdgeInsets.only(top: 20),
+          child: const P(
+            text: '必須項目の記入が未記入です',
+            color: Colors.red,
+          ),
+        ));
   }
 }
