@@ -98,8 +98,9 @@ class _TextFieldModelState extends State<TextFieldModel> {
             child: TextFormField(
               validator: (value) {
                 if (value?.isEmpty ?? true) {
-                  return '必須です';
+                  return '必須項目です';
                 }
+                return null;
               },
               maxLines: ContactViewModel.maxLines,
               controller: ContactViewModel.controller,

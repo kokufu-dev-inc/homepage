@@ -32,20 +32,26 @@ class ContactViewModel {
   }
 
   void rebuild() {
-    print(personalnamecontroller.text);
-    print(mailcontroller.text);
-    print(tellcontroller.text);
-    print(companynamecontroller.text);
-    print(inquirycontroller.text);
-    // show = true;
-    // rebuildmodal();
-    rebuildtextfield();
-    formKeyP.currentState!.validate();
-    formKeyM.currentState!.validate();
-    formKeyT.currentState!.validate();
-    formKeyI.currentState!.validate();
-    // if (formKey.currentState!.validate()) {
-    //   print('必須のやつ');
+    if (formKeyP.currentState!.validate()) {
+      debugPrint(personalnamecontroller.text);
+      // debugPrint(mailcontroller.text);
+      // debugPrint(tellcontroller.text);
+      // debugPrint(companynamecontroller.text);
+      // debugPrint(inquirycontroller.text);
+      show = true;
+      rebuildmodal();
+    } else {
+      debugPrint('validate引っかかった');
+      rebuildtextfield();
+    }
+    //  if (formKeyM.currentState!.validate()) {
+    //   debugPrint('validate完了');
+    // }
+    // if (formKeyT.currentState!.validate()) {
+    //   debugPrint('validate完了');
+    // }
+    // if (formKeyI.currentState!.validate()) {
+    //   debugPrint('validate完了');
     // }
   }
 }
