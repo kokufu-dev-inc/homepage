@@ -47,27 +47,27 @@ class Contact_Textfield extends StatelessWidget {
       padding: const EdgeInsets.all(70),
       child: const Column(
         children: [
-          Textfield_Personal(
+          TextFieldModel(
             title: '指名、担当者名',
             labeltext: '苗字と名前を入力してください',
             hinttext: '苗字 名前',
           ),
-          Textfield_Personal(
+          TextFieldModel(
             title: '組織名、部署名',
             labeltext: '所属する組織、部署の情報を入力してください',
             hinttext: 'xxxx・xxxx',
           ),
-          Textfield_Personal(
+          TextFieldModel(
             title: 'メールアドレス',
             labeltext: '返信を受け取るメールアドレスを入力してください',
             hinttext: 'kokufu@example.com',
           ),
-          Textfield_Personal(
+          TextFieldModel(
             title: '電話番号',
             labeltext: '臨時ご連絡できる電話番号を入力してください',
             hinttext: '000-0000-0000',
           ),
-          Textfield_Personal(
+          TextFieldModel(
               title: 'お問い合わせ内容',
               labeltext: '詳細を記入してください',
               hinttext: 'xxxxxxxxxxxxxxxxxxxxxxxxx')
@@ -85,7 +85,7 @@ class Send_Button extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 50),
       child: ElevatedButton(
-        onPressed: ContactViewModel.instanceC.rebuildModal,
+        onPressed: ContactViewModel.instanceC.rebuild,
         style: ElevatedButton.styleFrom(
           backgroundColor: Colors.white,
           side: const BorderSide(color: Colors.black, width: 1),

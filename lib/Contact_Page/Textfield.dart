@@ -3,16 +3,32 @@ import 'package:flutter_test_app/Contact_Page/Contact_ViewModel.dart';
 import 'package:flutter_test_app/Headings.dart';
 import 'package:go_router/go_router.dart';
 
-class Textfield_Personal extends StatelessWidget {
-  const Textfield_Personal(
+// ignore: must_be_immutable
+class TextFieldModel extends StatefulWidget {
+  const TextFieldModel(
       {super.key,
       required this.title,
       required this.labeltext,
       required this.hinttext});
-
   final String title;
   final String labeltext;
   final String hinttext;
+
+  @override
+  State<TextFieldModel> createState() => _TextFieldModelState();
+}
+
+class _TextFieldModelState extends State<TextFieldModel> {
+  void rebuildTextField() {
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    // ViewModel内に、上記で定義した再描画メソッドを渡す
+    ContactViewModel.instanceC.gettextfieldstate(rebuildTextField);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,38 +45,42 @@ class Textfield_Personal extends StatelessWidget {
         color: Colors.white,
       ),
     );
-    switch (title) {
+    switch (widget.title) {
       case '指名、担当者名':
         ContactViewModel.maxLines = 1;
         ContactViewModel.controller = ContactViewModel.personalnamecontroller;
+        ContactViewModel.formKey = ContactViewModel.formKeyP;
         break;
 
       case '組織名、部署名':
         ContactViewModel.maxLines = 1;
         ContactViewModel.controller = ContactViewModel.companynamecontroller;
+        ContactViewModel.formKey = ContactViewModel.formKeyC;
         Must = Container();
         break;
 
       case 'メールアドレス':
         ContactViewModel.maxLines = 1;
         ContactViewModel.controller = ContactViewModel.mailcontroller;
+        ContactViewModel.formKey = ContactViewModel.formKeyM;
         break;
 
       case '電話番号':
         ContactViewModel.maxLines = 1;
         ContactViewModel.controller = ContactViewModel.tellcontroller;
+        ContactViewModel.formKey = ContactViewModel.formKeyT;
         break;
 
       case 'お問い合わせ内容':
         ContactViewModel.maxLines = null;
         ContactViewModel.controller = ContactViewModel.inquirycontroller;
+        ContactViewModel.formKey = ContactViewModel.formKeyI;
         break;
 
       default:
         print('想定されていないTextField');
         break;
     }
-
     return Container(
       padding: const EdgeInsets.fromLTRB(200, 25, 200, 25),
       child: Column(
@@ -70,17 +90,25 @@ class Textfield_Personal extends StatelessWidget {
             margin: const EdgeInsets.only(bottom: 10),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [P(text: title), Must],
+              children: [P(text: widget.title), Must],
             ),
           ),
-          TextField(
-            maxLines: ContactViewModel.maxLines,
-            controller: ContactViewModel.controller,
-            decoration: InputDecoration(
-              border: const OutlineInputBorder(),
-              labelText: labeltext,
-              hintText: hinttext,
-              errorText: null,
+          Form(
+            key: ContactViewModel.formKey,
+            child: TextFormField(
+              validator: (value) {
+                if (value?.isEmpty ?? true) {
+                  return '必須です';
+                }
+              },
+              maxLines: ContactViewModel.maxLines,
+              controller: ContactViewModel.controller,
+              decoration: InputDecoration(
+                border: const OutlineInputBorder(),
+                labelText: widget.labeltext,
+                hintText: widget.hinttext,
+                errorText: null,
+              ),
             ),
           ),
         ],
@@ -104,7 +132,7 @@ class _ToTopModalState extends State<ToTopModal> {
   @override
   void initState() {
     // ViewModel内に、上記で定義した再描画メソッドを渡す
-    ContactViewModel.instanceC.textprint(rebuildModal);
+    ContactViewModel.instanceC.getmodalstate(rebuildModal);
     super.initState();
   }
 
