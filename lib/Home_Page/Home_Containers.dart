@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/Home_Page/Example_Boxes.dart';
-import 'package:flutter_test_app/Headings.dart';
+import 'package:flutter_test_app/component/html/html_importer.dart';
 import 'package:flutter_test_app/theme.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -57,8 +57,8 @@ class Home_FirstView extends StatelessWidget {
 }
 
 // ignore: camel_case_types
-class Specialist_Company extends StatelessWidget {
-  const Specialist_Company({super.key});
+class SpecialistCompany extends StatelessWidget {
+  const SpecialistCompany({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,7 @@ class Specialist_Company extends StatelessWidget {
                     children: [
                       Container(
                         margin: const EdgeInsets.only(bottom: 70),
-                        child: H1(text: 'Flutter専門の開発会社'),
+                        child: const H1(text: 'Flutter専門の開発会社'),
                       ),
                       Container(
                         margin: const EdgeInsets.only(bottom: 30),

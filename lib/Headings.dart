@@ -18,55 +18,55 @@ class P extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
-class H1 extends StatelessWidget {
-  H1({
-    super.key,
-    required this.text,
-    this.color,
-  });
+// // ignore: must_be_immutable
+// class H1 extends StatelessWidget {
+//   H1({
+//     super.key,
+//     required this.text,
+//     this.color,
+//   });
 
-  final String text;
-  final Color? color;
+//   final String text;
+//   final Color? color;
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style:
-          GoogleFonts.courierPrime(fontSize: KokufuFontsize.h1S, color: color),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       text,
+//       style:
+//           GoogleFonts.courierPrime(fontSize: KokufuFontsize.h1S, color: color),
+//     );
+//   }
+// }
 
-class H2 extends StatelessWidget {
-  const H2({super.key, required this.text, this.color});
+// class H2 extends StatelessWidget {
+//   const H2({super.key, required this.text, this.color});
 
-  final String text;
-  final Color? color;
+//   final String text;
+//   final Color? color;
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style:
-          GoogleFonts.courierPrime(fontSize: KokufuFontsize.h2S, color: color),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       text,
+//       style:
+//           GoogleFonts.courierPrime(fontSize: KokufuFontsize.h2S, color: color),
+//     );
+//   }
+// }
 
-class H3 extends StatelessWidget {
-  const H3({super.key, required this.text, this.color});
+// class H3 extends StatelessWidget {
+//   const H3({super.key, required this.text, this.color});
 
-  final String text;
-  final Color? color;
+//   final String text;
+//   final Color? color;
 
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      text,
-      style:
-          GoogleFonts.courierPrime(fontSize: KokufuFontsize.h3S, color: color),
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Text(
+//       text,
+//       style:
+//           GoogleFonts.courierPrime(fontSize: KokufuFontsize.h3S, color: color),
+//     );
+//   }
+// }

@@ -17,7 +17,7 @@ class Home_Page extends StatelessWidget {
         child: Column(
           children: [
             Home_FirstView(),
-            Specialist_Company(),
+            SpecialistCompany(),
             Home_Banner(),
             Development_Examples(),
             Contact_Form(),

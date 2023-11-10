@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/Contact_Page/Contact_Page.dart';
+import 'package:flutter_test_app/Contact_Page/contact_page.dart';
 import 'package:flutter_test_app/Home_Page/Home_Page.dart';
 import 'package:go_router/go_router.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ),
       GoRoute(
         path: '/Contact_Page',
-        builder: (context, state) => const Contact_Page(),
+        builder: (context, state) => const ContactPage(),
       ),
     ],
   );

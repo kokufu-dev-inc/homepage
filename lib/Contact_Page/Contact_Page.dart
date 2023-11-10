@@ -1,34 +1,56 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/Bar.dart';
-import 'package:flutter_test_app/Contact_Page/Contact_Containers.dart';
-import 'package:flutter_test_app/Contact_Page/Textfield.dart';
+import 'package:flutter_test_app/Contact_Page/contact_complete_modal.dart';
+import 'package:flutter_test_app/Contact_Page/contact_form.dart';
+import 'package:flutter_test_app/Contact_Page/contact_form_title.dart';
 
-class Contact_Page extends StatelessWidget {
-  const Contact_Page({super.key});
+class ContactPage extends StatefulWidget {
+  const ContactPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
+  Widget builder(BuildContext context, _ContactPageState state) {
+    return Scaffold(
       extendBodyBehindAppBar: true,
-      drawer: Drawer(
+      drawer: const Drawer(
         child: Sidemenu(),
       ),
-      appBar: OriginalAppBar(),
+      appBar: const OriginalAppBar(),
       body: Stack(
         children: [
           SingleChildScrollView(
             child: Column(
               children: [
-                Contact_Firstview(),
-                Contact_Textfield(),
-                Send_Button(),
-                Fotter(),
+                const ContactFormTitle(),
+                ContactForm(
+                  onSubmit: () {
+                    state.visibilityModal = true;
+                    state.setState(() {});
+                  },
+                ),
+                const Fotter(),
               ],
             ),
           ),
-          Center(child: ToTopModal()),
+          Center(
+            child: Visibility(
+              visible: state.visibilityModal,
+              child: const ContactCompleteModal(),
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  @override
+  State<StatefulWidget> createState() => _ContactPageState();
+}
+
+class _ContactPageState extends State<ContactPage> {
+  _ContactPageState();
+
+  bool visibilityModal = false;
+  @override
+  Widget build(BuildContext context) {
+    return widget.builder(context, this);
   }
 }
