@@ -30,5 +30,23 @@ class Images {
 
 //字体の指定
 class KokufuFontfamily {
-  static const fontfamily = GoogleFonts.yujiSyuku;
+  static const fontfamily = GoogleFonts.mukta;
+}
+
+//レスポンシブサイズ
+class ScreenSize {
+  static ScreenWidth get width {
+    return ScreenWidth();
+  }
+}
+
+class ScreenWidth {
+  int webL = 1200;
+  int webM = 600;
+}
+
+class Responsive {
+  static String L = 'L';
+  static String M = 'M';
+  static String S = 'S';
 }

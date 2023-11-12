@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/Headings.dart';
+import 'package:flutter_test_app/component/html/html_importer.dart';
 
 class RequireLabel extends StatelessWidget {
   const RequireLabel({super.key});

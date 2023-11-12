@@ -27,7 +27,7 @@ class ContactCompleteModal extends StatelessWidget {
               margin: const EdgeInsets.only(top: 30),
               child: ElevatedButton(
                 onPressed: () async {
-                  await context.push('/Home_Page');
+                  await context.push('/home_view');
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,

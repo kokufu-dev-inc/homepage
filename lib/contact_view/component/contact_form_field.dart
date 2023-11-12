@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/Contact_Page/contact_form_require_label.dart';
-import 'package:flutter_test_app/Headings.dart';
+import 'package:flutter_test_app/component/html/html_importer.dart';
+import 'package:flutter_test_app/contact_view/component/contact_require_label.dart';
 
 class ContactFormField extends StatelessWidget {
   const ContactFormField({

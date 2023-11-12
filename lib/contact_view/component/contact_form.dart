@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/Contact_Page/contact_send_button.dart';
-import 'package:flutter_test_app/Contact_Page/contact_view_model.dart';
-import 'package:flutter_test_app/Contact_Page/contact_form_field.dart';
-import 'package:flutter_test_app/Headings.dart';
+import 'package:flutter_test_app/contact_view/component/contact_send_button.dart';
+import 'package:flutter_test_app/component/html/html_importer.dart';
+import 'package:flutter_test_app/contact_view/component/contact_form_field.dart';
+import 'package:flutter_test_app/contact_view/component/contact_view_model.dart';
 
 class ContactForm extends StatefulWidget {
   ContactForm({
     super.key,
     required this.onSubmit,
   });
+
   final void Function() onSubmit;
   final formkey = GlobalKey<FormState>();
+  final vm = ContactViewModel();
 
   Widget builder(BuildContext context, _ContactFormState state) {
-    final vm = ContactViewModel();
     return Form(
       key: formkey,
       child: Container(
@@ -78,7 +79,6 @@ class ContactForm extends StatefulWidget {
             ),
             SendButton(
               onPressed: () {
-                //controllerがインスタンス経由だからsetState()でbuild()されたときに新しくなる
                 final result = vm.sendaction(formkey);
                 if (result) {
                   state.visibiltyErrorText = false;

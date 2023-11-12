@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/Contact_Page/contact_page.dart';
-import 'package:flutter_test_app/Home_Page/Home_Page.dart';
+import 'package:flutter_test_app/contact_view/contact_view.dart';
+import 'package:flutter_test_app/home_view/home_view.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
@@ -11,16 +11,16 @@ class MyApp extends StatelessWidget {
   MyApp({super.key});
   final router = GoRouter(
     // パス (アプリが起動したとき)
-    initialLocation: '/Home_Page',
+    initialLocation: '/home_view',
     // パスと画面の組み合わせ
     routes: [
       GoRoute(
-        path: '/Home_Page',
-        builder: (context, state) => const Home_Page(),
+        path: '/home_view',
+        builder: (context, state) => const HomeView(),
       ),
       GoRoute(
-        path: '/Contact_Page',
-        builder: (context, state) => const ContactPage(),
+        path: '/contact_view',
+        builder: (context, state) => const ContactView(),
       ),
     ],
   );

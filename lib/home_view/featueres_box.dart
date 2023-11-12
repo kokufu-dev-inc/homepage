@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_app/component/html/html_importer.dart';
 
 // ignore: camel_case_types
-class Example_Boxes extends StatelessWidget {
-  const Example_Boxes({super.key, required this.title, required this.contents});
+class FeatueresBox extends StatelessWidget {
+  const FeatueresBox({super.key, required this.title, required this.contents});
 
   final String title;
   final String contents;
