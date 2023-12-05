@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/component/view/bar_importer.dart';
 import 'package:flutter_test_app/component/view/home_importer.dart';
-import 'package:flutter_test_app/theme.dart';
+import 'package:flutter_test_app/home_view/home_to_contact_view.dart/home_to_view.dart';
 
 class HomeViewWebM extends StatelessWidget {
   const HomeViewWebM({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return
-        // Container(
-        //   color: Colors.orange.shade300,
-        //   width: double.infinity,
-        //   height: double.infinity,
-        //   child: const Center(
-        //     child: Text('タブレット'),
-        //   ),
-        // );
-        SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [
-          const HomeTitle(),
-          Description(
-            responsive: Responsive.M,
+          HomeTitle(
+            responsive: 'M',
           ),
-          const HomeBanner(),
-          const Featueres(),
-          const ToContactPage(),
-          const Footer(),
+          Description(
+            responsive: 'M',
+          ),
+          HomeBanner(),
+          Featueres(
+            responsive: 'M',
+          ),
+          ToContactAbout(
+            responsive: 'M',
+          ),
+          Footer(),
         ],
       ),
     );

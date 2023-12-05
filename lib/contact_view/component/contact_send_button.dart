@@ -8,7 +8,7 @@ class SendButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 20),
+      margin: const EdgeInsets.only(top: 50),
       child: Column(
         children: [
           ElevatedButton(

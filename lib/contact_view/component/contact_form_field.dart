@@ -25,7 +25,7 @@ class ContactFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(200, 25, 200, 25),
+      padding: const EdgeInsets.fromLTRB(0, 25, 0, 25),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

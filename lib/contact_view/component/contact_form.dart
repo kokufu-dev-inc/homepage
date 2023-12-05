@@ -3,22 +3,26 @@ import 'package:flutter_test_app/contact_view/component/contact_send_button.dart
 import 'package:flutter_test_app/component/html/html_importer.dart';
 import 'package:flutter_test_app/contact_view/component/contact_form_field.dart';
 import 'package:flutter_test_app/contact_view/component/contact_view_model.dart';
+import 'package:flutter_test_app/theme.dart';
 
 class ContactForm extends StatefulWidget {
   ContactForm({
     super.key,
     required this.onSubmit,
+    required this.responsive,
   });
 
   final void Function() onSubmit;
   final formkey = GlobalKey<FormState>();
   final vm = ContactViewModel();
+  final String responsive;
 
   Widget builder(BuildContext context, _ContactFormState state) {
     return Form(
       key: formkey,
       child: Container(
-        padding: const EdgeInsets.all(70),
+        padding: const EdgeInsets.fromLTRB(0, 50, 0, 50),
+        width: contactResponsiveWidth(responsive),
         child: Column(
           children: [
             ContactFormField(

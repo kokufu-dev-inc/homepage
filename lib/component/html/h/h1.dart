@@ -6,17 +6,23 @@ class H1 extends StatelessWidget {
     super.key,
     required this.text,
     this.color,
+    this.textAlign = TextAlign.left,
   });
 
   final String text;
   final Color? color;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Text(
       text,
       style: KokufuFontfamily.fontfamily(
-          fontSize: KokufuFontsize.h1S, color: color),
+        fontSize: responsiveFontSizeH1(screenWidth),
+        color: color,
+      ),
+      textAlign: textAlign,
     );
   }
 }

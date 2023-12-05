@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/contact_view/contact_complete_modal.dart';
-import 'package:flutter_test_app/contact_view/contact_form_title.dart';
+import 'package:flutter_test_app/contact_view/contact_form_title/contact_form_title.dart';
 import 'package:flutter_test_app/component/view/bar_importer.dart';
 import 'package:flutter_test_app/contact_view/component/contact_form.dart';
 
@@ -21,6 +21,7 @@ class ContactViewWebL extends StatelessWidget {
               const ContactFormTitle(),
               ContactForm(
                 onSubmit: onSubmit,
+                responsive: 'L',
               ),
               const Footer(),
             ],

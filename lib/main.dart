@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/about_view/about_view.dart';
 import 'package:flutter_test_app/contact_view/contact_view.dart';
 import 'package:flutter_test_app/home_view/home_view.dart';
 import 'package:go_router/go_router.dart';
@@ -21,6 +22,10 @@ class MyApp extends StatelessWidget {
       GoRoute(
         path: '/contact_view',
         builder: (context, state) => const ContactView(),
+      ),
+      GoRoute(
+        path: '/about_view',
+        builder: (context, state) => const AboutView(),
       ),
     ],
   );

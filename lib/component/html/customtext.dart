@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/theme.dart';
 
-class P extends StatelessWidget {
-  const P(
-      {super.key,
-      required this.text,
-      this.color,
-      this.textAlign = TextAlign.left});
+class CustomText extends StatelessWidget {
+  const CustomText({
+    super.key,
+    required this.text,
+    this.color,
+    this.fontSize = 18,
+  });
 
   final String text;
   final Color? color;
-  final TextAlign? textAlign;
+  final double? fontSize;
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
       style: KokufuFontfamily.fontfamily(
-        fontSize: KokufuFontsize.p,
+        fontSize: fontSize,
         color: color,
       ),
-      textAlign: textAlign,
     );
   }
 }

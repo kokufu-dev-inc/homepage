@@ -34,6 +34,13 @@ class Sidemenu extends StatelessWidget {
             context.push('/contact_view');
           },
         ),
+        ListTile(
+          title: const P(text: '会社情報'),
+          onTap: () {
+            debugPrint('会社情報');
+            context.push('/about_view');
+          },
+        ),
       ],
     );
   }

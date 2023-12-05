@@ -4,8 +4,8 @@ import 'package:flutter_test_app/contact_view/contact_form_title/contact_form_ti
 import 'package:flutter_test_app/component/view/bar_importer.dart';
 import 'package:flutter_test_app/contact_view/component/contact_form.dart';
 
-class ContactViewWebS extends StatelessWidget {
-  const ContactViewWebS({
+class ContactViewWebM extends StatelessWidget {
+  const ContactViewWebM({
     super.key,
     required this.onSubmit,
     required this.visible,
@@ -24,7 +24,7 @@ class ContactViewWebS extends StatelessWidget {
               const ContactFormTitle(),
               ContactForm(
                 onSubmit: onSubmit,
-                responsive: 'S',
+                responsive: 'M',
               ),
               const Footer(),
             ],
