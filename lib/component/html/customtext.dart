@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/theme.dart';
+import 'package:flutter_test_app/theme/kokufu_font.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
@@ -17,8 +17,9 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: KokufuFontfamily.fontfamily(
+      style: TextStyle(
         fontSize: fontSize,
+        fontFamilyFallback: KokufuFontfamily.fontFamilyFallback,
         color: color,
       ),
     );

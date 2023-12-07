@@ -1,31 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/about_view/about_view.dart';
-import 'package:flutter_test_app/contact_view/contact_view.dart';
-import 'package:flutter_test_app/home_view/home_view.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_test_app/pages/about_page/about_page.dart';
+import 'package:flutter_test_app/pages/contact_page/contact_page.dart';
+import 'package:flutter_test_app/pages/home_page/home_page.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    ProviderScope(
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
   final router = GoRouter(
     // パス (アプリが起動したとき)
-    initialLocation: '/home_view',
+    initialLocation: HomePage.routeName,
     // パスと画面の組み合わせ
     routes: [
       GoRoute(
-        path: '/home_view',
-        builder: (context, state) => const HomeView(),
+        path: HomePage.routeName,
+        builder: (context, state) => const HomePage(),
       ),
       GoRoute(
-        path: '/contact_view',
+        path: ContactView.routeName,
         builder: (context, state) => const ContactView(),
       ),
       GoRoute(
-        path: '/about_view',
-        builder: (context, state) => const AboutView(),
+        path: AboutPage.routeName,
+        builder: (context, state) => const AboutPage(),
       ),
     ],
   );

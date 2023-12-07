@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test_app/component/kokufu_text.dart';
 import 'package:flutter_test_app/theme/kokufu_font.dart';
 
-class P extends StatelessWidget {
-  const P(
+class Small extends StatelessWidget {
+  const Small(
     this.text, {
     super.key,
     this.color,
@@ -24,13 +24,13 @@ class P extends StatelessWidget {
   Widget build(BuildContext context) {
     return KokufuText(
       text: text,
-      fontSize: KokufuFontSize.p,
+      fontSize: KokufuFontSize.small,
       color: color,
       textAlign: textAlign,
       fontWeight: fontWeight,
       textHeight: 1.9,
       padding: padding,
-      margin: margin ?? const EdgeInsets.only(bottom: KokufuFontSize.p),
+      margin: margin,
     );
   }
 }
