@@ -15,6 +15,8 @@ class HomeViewL extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final contentWidth = MediaQuery.of(context).size.width * 0.6;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: const KokufuAppBar(
@@ -29,21 +31,17 @@ class HomeViewL extends StatelessWidget {
         child: Main(
           child: Column(
             children: [
-              const PrimaryMessage(),
-              const SecondaryMessage(),
-              const ProcessInformation(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  // Expanded(
-                  //   flex: 1,
-                  //   child: AboutNavigation(),
-                  // ),
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width * 0.6,
-                    child: const ContactNavigation(),
-                  ),
-                ],
+              PrimaryMessage(
+                width: contentWidth,
+              ),
+              SecondaryMessage(
+                width: contentWidth,
+              ),
+              ProcessInformation(
+                width: contentWidth,
+              ),
+              ContactNavigation(
+                width: contentWidth,
               ),
               const Footer(),
             ],

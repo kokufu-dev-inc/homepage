@@ -4,12 +4,18 @@ import 'package:flutter_test_app/layout/section_layout.dart';
 import 'package:flutter_test_app/pages/home_page/process_information/process_information_card.dart';
 
 class ProcessInformation extends StatelessWidget {
-  const ProcessInformation({super.key});
+  const ProcessInformation({
+    super.key,
+    this.width,
+  });
+
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
-    return const SectionLayout(
-      child: Column(
+    return SectionLayout(
+      width: width,
+      child: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           H2(

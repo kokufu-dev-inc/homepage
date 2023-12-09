@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 class KokufuNavigationLayout extends StatelessWidget {
   const KokufuNavigationLayout({
     super.key,
+    this.width,
     required this.title,
     required this.subTitle,
     required this.description,
@@ -16,6 +17,7 @@ class KokufuNavigationLayout extends StatelessWidget {
     required this.navigationRouteName,
   });
 
+  final double? width;
   final String title;
   final String subTitle;
   final String description;
@@ -25,6 +27,7 @@ class KokufuNavigationLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SectionLayout(
+      width: width,
       child: Column(
         children: [
           H3(subTitle, margin: EdgeInsets.zero),

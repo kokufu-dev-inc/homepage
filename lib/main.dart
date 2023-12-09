@@ -21,16 +21,26 @@ class MyApp extends StatelessWidget {
     // パスと画面の組み合わせ
     routes: [
       GoRoute(
+        name: HomePage.routeName,
         path: HomePage.routeName,
-        builder: (context, state) => const HomePage(),
+        // builder: (context, state) => const HomePage(),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: HomePage()),
       ),
       GoRoute(
+        name: ContactView.routeName,
         path: ContactView.routeName,
-        builder: (context, state) => const ContactView(),
+        // builder: (context, state) => const ContactView(),
+        pageBuilder: (context, state) =>
+            const NoTransitionPage(child: ContactView()),
       ),
       GoRoute(
+        name: AboutPage.routeName,
         path: AboutPage.routeName,
-        builder: (context, state) => const AboutPage(),
+        // builder: (context, state) => const AboutPage(),
+        pageBuilder: (context, state) => const NoTransitionPage(
+          child: AboutPage(),
+        ),
       ),
     ],
   );

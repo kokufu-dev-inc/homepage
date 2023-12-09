@@ -3,11 +3,17 @@ import 'package:flutter_test_app/layout/kokufu_navigation_layout.dart';
 import 'package:flutter_test_app/pages/contact_page/contact_page.dart';
 
 class ContactNavigation extends StatelessWidget {
-  const ContactNavigation({Key? key}) : super(key: key);
+  const ContactNavigation({
+    Key? key,
+    this.width,
+  }) : super(key: key);
+
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
-    return const KokufuNavigationLayout(
+    return KokufuNavigationLayout(
+      width: width,
       title: 'CONTACT',
       subTitle: 'お問い合わせ・ご相談',
       description: 'アプリ開発のことならお気軽にご相談ください。御見積のご依頼も可能です。',

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_test_app/pages/home_page/home_page.dart';
 import 'package:flutter_test_app/theme/kokufu_font.dart';
+import 'package:go_router/go_router.dart';
 
 class KokufuAppBar extends StatelessWidget implements PreferredSizeWidget {
   const KokufuAppBar({
@@ -18,12 +20,17 @@ class KokufuAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: const Text(
-        'kokufu.dev',
-        style: TextStyle(
-          fontFamily: KokufuFontfamily.primary,
-          fontWeight: FontWeight.bold,
-          color: Colors.black,
+      title: TextButton(
+        onPressed: () {
+          context.push(HomePage.routeName);
+        },
+        child: const Text(
+          'kokufu.dev',
+          style: TextStyle(
+            fontFamily: KokufuFontfamily.primary,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
         ),
       ),
       centerTitle: centerTitle,
