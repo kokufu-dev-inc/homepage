@@ -12,8 +12,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  
+  flutter_web_plugins:
+    sdk: flutter
 
-  go_router: ^12.1.1
   flutter_riverpod: ^2.4.9
   cupertino_icons: ^1.0.2
   http: ^0.13.6

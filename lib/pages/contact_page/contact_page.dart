@@ -4,8 +4,8 @@ import 'package:flutter_test_app/pages/contact_page/responsive/contact_view_l.da
 import 'package:flutter_test_app/pages/contact_page/responsive/contact_view_m.dart';
 import 'package:flutter_test_app/pages/contact_page/responsive/contact_view_s.dart';
 
-class ContactView extends StatelessWidget {
-  const ContactView({super.key});
+class ContactPage extends StatelessWidget {
+  const ContactPage({super.key});
 
   static const String routeName = '/contact';
 

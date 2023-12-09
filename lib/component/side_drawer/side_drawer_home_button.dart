@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_app/component/side_drawer/side_drawer_button_item.dart';
 import 'package:flutter_test_app/pages/home_page/home_page.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_test_app/routes.dart';
 
 class SideDrawerHomeButton extends StatelessWidget {
   const SideDrawerHomeButton({super.key});
@@ -9,7 +9,10 @@ class SideDrawerHomeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SideDrawerButtonItem(
-      onPressed: () => context.pushReplacement(HomePage.routeName),
+      onPressed: () {
+        Routes.pop(context);
+        Routes.push(context, HomePage.routeName);
+      },
       label: 'ホーム',
     );
   }

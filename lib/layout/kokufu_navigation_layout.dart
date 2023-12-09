@@ -4,7 +4,6 @@ import 'package:flutter_test_app/component/html/h/h3.dart';
 import 'package:flutter_test_app/component/html/p/p.dart';
 import 'package:flutter_test_app/component/kokufu_outlined_button.dart';
 import 'package:flutter_test_app/layout/section_layout.dart';
-import 'package:go_router/go_router.dart';
 
 class KokufuNavigationLayout extends StatelessWidget {
   const KokufuNavigationLayout({
@@ -37,9 +36,7 @@ class KokufuNavigationLayout extends StatelessWidget {
           ),
           P(description, textAlign: TextAlign.center),
           KokufuOutlinedButton(
-            onPressed: () {
-              context.push(navigationRouteName);
-            },
+            onPressed: () {},
             child: Text(
               navigationButtonText,
               style: const TextStyle(

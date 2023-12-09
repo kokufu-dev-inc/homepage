@@ -7,7 +7,7 @@ import 'package:flutter_test_app/pages/home_page/responsive/home_view_s.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  static const String routeName = '/home';
+  static const String routeName = '/';
 
   @override
   Widget build(BuildContext context) {

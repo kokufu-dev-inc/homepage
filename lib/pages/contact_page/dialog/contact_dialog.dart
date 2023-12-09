@@ -4,7 +4,7 @@ import 'package:flutter_test_app/component/kokufu_outlined_button.dart';
 import 'package:flutter_test_app/layout/responsive_layout.dart';
 import 'package:flutter_test_app/layout/section_layout.dart';
 import 'package:flutter_test_app/pages/home_page/home_page.dart';
-import 'package:go_router/go_router.dart';
+import 'package:flutter_test_app/routes.dart';
 
 class ContactDialog extends StatelessWidget {
   const ContactDialog({
@@ -72,7 +72,7 @@ Future<void> showContactCompleteDialog(BuildContext context) async {
     content: '確認後、数日中に返信させていただきます',
     buttonText: 'OK',
     onPressed: () {
-      context.pushReplacement(HomePage.routeName);
+      Routes.push(context, HomePage.routeName);
     },
   );
   await showDialog(
@@ -95,7 +95,7 @@ Future<void> showContactErrorDialog(BuildContext context) async {
         title: '送信に失敗しました。',
         buttonText: 'OK',
         onPressed: () {
-          context.pop();
+          Routes.pop(context);
         },
       );
     },

@@ -18,7 +18,7 @@ class ContactNavigation extends StatelessWidget {
       subTitle: 'お問い合わせ・ご相談',
       description: 'アプリ開発のことならお気軽にご相談ください。御見積のご依頼も可能です。',
       navigationButtonText: '問い合わせする',
-      navigationRouteName: ContactView.routeName,
+      navigationRouteName: ContactPage.routeName,
     );
   }
 }
