@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_test_app/component/app_bar/kokufu_app_bar.dart';
-import 'package:flutter_test_app/component/footer.dart';
-import 'package:flutter_test_app/component/html/main/main.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_about_button.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_contact_action_button.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_home_button.dart';
-import 'package:flutter_test_app/pages/contact_page/contact_description/contact_description.dart';
-import 'package:flutter_test_app/pages/contact_page/contact_title/contact_title.dart';
-import 'package:flutter_test_app/pages/contact_page/form/contact_form.dart';
+import 'package:homepage/component/app_bar/kokufu_app_bar.dart';
+import 'package:homepage/component/footer.dart';
+import 'package:homepage/component/html/main/main.dart';
+import 'package:homepage/component/side_drawer/side_drawer_about_button.dart';
+import 'package:homepage/component/side_drawer/side_drawer_contact_action_button.dart';
+import 'package:homepage/component/side_drawer/side_drawer_home_button.dart';
+import 'package:homepage/pages/contact_page/contact_description/contact_description.dart';
+import 'package:homepage/pages/contact_page/contact_title/contact_title.dart';
+import 'package:homepage/pages/contact_page/form/contact_form.dart';
 
 class ContactViewM extends ConsumerWidget {
   const ContactViewM({

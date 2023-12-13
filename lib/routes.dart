@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/pages/about_page/about_page.dart';
-import 'package:flutter_test_app/pages/contact_page/contact_page.dart';
-import 'package:flutter_test_app/pages/home_page/home_page.dart';
-import 'package:flutter_test_app/pages/not_found_page/nor_found_page.dart';
+import 'package:homepage/pages/about_page/about_page.dart';
+import 'package:homepage/pages/contact_page/contact_page.dart';
+import 'package:homepage/pages/home_page/home_page.dart';
+import 'package:homepage/pages/not_found_page/nor_found_page.dart';
 
 class Routes {
   static final Map<String, Widget Function(BuildContext)> routes = {

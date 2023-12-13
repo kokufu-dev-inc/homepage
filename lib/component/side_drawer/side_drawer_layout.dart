@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/html/html_importer.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_about_button.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_contact_action_button.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_home_button.dart';
-import 'package:flutter_test_app/theme/kokufu_colors.dart';
+import 'package:homepage/component/html/html_importer.dart';
+import 'package:homepage/component/side_drawer/side_drawer_about_button.dart';
+import 'package:homepage/component/side_drawer/side_drawer_contact_action_button.dart';
+import 'package:homepage/component/side_drawer/side_drawer_home_button.dart';
+import 'package:homepage/theme/kokufu_colors.dart';
 
 class SideDrawerLayout extends StatelessWidget {
   const SideDrawerLayout({super.key});

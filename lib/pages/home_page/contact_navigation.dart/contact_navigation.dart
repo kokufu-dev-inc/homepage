@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/layout/kokufu_navigation_layout.dart';
-import 'package:flutter_test_app/pages/contact_page/contact_page.dart';
+import 'package:homepage/layout/kokufu_navigation_layout.dart';
+import 'package:homepage/pages/contact_page/contact_page.dart';
 
 class ContactNavigation extends StatelessWidget {
   const ContactNavigation({

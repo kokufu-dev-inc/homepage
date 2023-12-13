@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/html/h/h1.dart';
-import 'package:flutter_test_app/component/html/h/h3.dart';
-import 'package:flutter_test_app/component/html/p/p.dart';
-import 'package:flutter_test_app/component/kokufu_outlined_button.dart';
-import 'package:flutter_test_app/layout/section_layout.dart';
+import 'package:homepage/component/html/h/h1.dart';
+import 'package:homepage/component/html/h/h3.dart';
+import 'package:homepage/component/html/p/p.dart';
+import 'package:homepage/component/kokufu_outlined_button.dart';
+import 'package:homepage/layout/section_layout.dart';
 
 class KokufuNavigationLayout extends StatelessWidget {
   const KokufuNavigationLayout({

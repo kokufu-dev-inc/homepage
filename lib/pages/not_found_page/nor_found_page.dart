@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/app_bar/kokufu_app_bar.dart';
+import 'package:homepage/component/app_bar/kokufu_app_bar.dart';
 
 class NotFoundPage extends StatelessWidget {
   const NotFoundPage({super.key});

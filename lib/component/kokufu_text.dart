@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/theme/kokufu_font.dart';
+import 'package:homepage/theme/kokufu_font.dart';
 
 // ignore: must_be_immutable
 class KokufuText extends StatelessWidget {

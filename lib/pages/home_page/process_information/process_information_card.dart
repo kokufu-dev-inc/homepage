@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/html/html_importer.dart';
+import 'package:homepage/component/html/html_importer.dart';
 
 class ProcessInformationCard extends StatelessWidget {
   const ProcessInformationCard({

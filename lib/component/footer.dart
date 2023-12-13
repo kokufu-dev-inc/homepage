@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/html/html_importer.dart';
-import 'package:flutter_test_app/component/html/small.dart';
+import 'package:homepage/component/html/html_importer.dart';
+import 'package:homepage/component/html/small.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});

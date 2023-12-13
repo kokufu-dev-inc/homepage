@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/kokufu_text.dart';
-import 'package:flutter_test_app/theme/kokufu_font.dart';
+import 'package:homepage/component/kokufu_text.dart';
+import 'package:homepage/theme/kokufu_font.dart';
 
 class H3 extends StatelessWidget {
   const H3(

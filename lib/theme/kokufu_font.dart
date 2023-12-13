@@ -1,4 +1,4 @@
-import 'package:flutter_test_app/theme/theme.dart';
+import 'package:homepage/theme/theme.dart';
 
 class KokufuFontfamily {
   static const primary = 'Mukta';

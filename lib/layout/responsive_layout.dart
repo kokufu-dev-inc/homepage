@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/theme/theme.dart';
+import 'package:homepage/theme/theme.dart';
 
 enum ResponsiveSize {
   s,

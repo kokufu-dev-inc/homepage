@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_button_item.dart';
-import 'package:flutter_test_app/pages/about_page/about_page.dart';
-import 'package:flutter_test_app/routes.dart';
+import 'package:homepage/component/side_drawer/side_drawer_button_item.dart';
+import 'package:homepage/pages/about_page/about_page.dart';
+import 'package:homepage/routes.dart';
 
 class SideDrawerAboutButton extends StatelessWidget {
   const SideDrawerAboutButton({super.key});

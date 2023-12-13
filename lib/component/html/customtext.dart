@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/theme/kokufu_font.dart';
+import 'package:homepage/theme/kokufu_font.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({

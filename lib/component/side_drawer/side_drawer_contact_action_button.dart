@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/side_drawer/side_drawer_button_item.dart';
-import 'package:flutter_test_app/pages/contact_page/contact_page.dart';
-import 'package:flutter_test_app/routes.dart';
+import 'package:homepage/component/side_drawer/side_drawer_button_item.dart';
+import 'package:homepage/pages/contact_page/contact_page.dart';
+import 'package:homepage/routes.dart';
 
 class SideDrawerContactButton extends StatelessWidget {
   const SideDrawerContactButton({super.key});

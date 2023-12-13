@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/component/html/html_importer.dart';
-import 'package:flutter_test_app/pages/home_page/home_page.dart';
-import 'package:flutter_test_app/routes.dart';
+import 'package:homepage/component/html/html_importer.dart';
+import 'package:homepage/pages/home_page/home_page.dart';
+import 'package:homepage/routes.dart';
 
 class KokufuAppBar extends StatelessWidget implements PreferredSizeWidget {
   const KokufuAppBar({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_app/layout/kokufu_navigation_layout.dart';
-import 'package:flutter_test_app/pages/about_page/about_page.dart';
+import 'package:homepage/layout/kokufu_navigation_layout.dart';
+import 'package:homepage/pages/about_page/about_page.dart';
 
 class AboutNavigation extends StatelessWidget {
   const AboutNavigation({Key? key}) : super(key: key);

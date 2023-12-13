@@ -1,11 +1,11 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_test_app/component/kokufu_outlined_button.dart';
-import 'package:flutter_test_app/layout/section_layout.dart';
-import 'package:flutter_test_app/pages/contact_page/contact_view_model.dart';
-import 'package:flutter_test_app/pages/contact_page/dialog/contact_dialog.dart';
-import 'package:flutter_test_app/pages/contact_page/form/contact_field.dart';
+import 'package:homepage/component/kokufu_outlined_button.dart';
+import 'package:homepage/layout/section_layout.dart';
+import 'package:homepage/pages/contact_page/contact_view_model.dart';
+import 'package:homepage/pages/contact_page/dialog/contact_dialog.dart';
+import 'package:homepage/pages/contact_page/form/contact_field.dart';
 
 class ContactForm extends ConsumerWidget {
   const ContactForm({super.key});
