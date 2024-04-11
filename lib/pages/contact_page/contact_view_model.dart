@@ -38,7 +38,7 @@ class ContactViewModel extends StateNotifier<ContactViewModelState> {
     final content = contentController.text;
 
     final slack = SlackNotifier(
-      'https://hooks.slack.com/services/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',
+      'https://hooks.slack.com/services/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',
     );
 
     final response = await slack.send(
