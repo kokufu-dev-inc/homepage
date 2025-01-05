@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class ContactTextField extends ConsumerWidget {
+class ContactTextField extends StatelessWidget {
   const ContactTextField({
     super.key,
     this.hintText,
@@ -30,7 +29,7 @@ class ContactTextField extends ConsumerWidget {
   }
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 16),
       child: Column(

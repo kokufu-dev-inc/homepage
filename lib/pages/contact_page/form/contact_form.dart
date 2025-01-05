@@ -1,20 +1,28 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:homepage/component/kokufu_outlined_button.dart';
 import 'package:homepage/layout/section_layout.dart';
-import 'package:homepage/pages/contact_page/contact_view_model.dart';
 import 'package:homepage/pages/contact_page/dialog/contact_dialog.dart';
 import 'package:homepage/pages/contact_page/form/contact_field.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:slack_notifier/slack_notifier.dart';
 
-class ContactForm extends ConsumerWidget {
+class ContactForm extends HookConsumerWidget {
   const ContactForm({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final state = ref.watch(contactViewModelProvider);
-    final vm = ref.watch(contactViewModelProvider.notifier);
+    final companyNameController = useTextEditingController();
+    final contactPersonController = useTextEditingController();
+    final emailController = useTextEditingController();
+    final contentController = useTextEditingController();
     final formKey = GlobalKey<FormState>();
+
+    final companyNameLabel = '会社名';
+    final contactPersonLabel = 'ご担当者名';
+    final emailLabel = 'メールアドレス';
+    final contentLabel = 'お問い合わせ内容';
 
     return SectionLayout(
       child: Form(
@@ -26,34 +34,34 @@ class ContactForm extends ConsumerWidget {
               child: Column(
                 children: [
                   ContactTextField(
-                    label: state.companyNameLabel,
-                    controller: vm.companyNameController,
+                    label: companyNameLabel,
+                    controller: companyNameController,
                     required: true,
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
-                        return '${state.companyNameLabel}は必須です。';
+                        return '$companyNameLabelは必須です。';
                       }
                       return null;
                     },
                   ),
                   ContactTextField(
-                    label: state.contactPersonLabel,
-                    controller: vm.contactPersonController,
+                    label: contactPersonLabel,
+                    controller: contactPersonController,
                     required: true,
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
-                        return '${state.contactPersonLabel}は必須です。';
+                        return '$contactPersonLabelは必須です。';
                       }
                       return null;
                     },
                   ),
                   ContactTextField(
-                    label: state.emailLabel,
-                    controller: vm.emailController,
+                    label: emailLabel,
+                    controller: emailController,
                     required: true,
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
-                        return '${state.emailLabel}は必須です。';
+                        return '$emailLabelは必須です。';
                       }
                       if (!EmailValidator.validate(value!)) {
                         return '正しいメールアドレスの形式ではありません';
@@ -62,14 +70,14 @@ class ContactForm extends ConsumerWidget {
                     },
                   ),
                   ContactTextField(
-                    label: state.contentLabel,
-                    controller: vm.contentController,
+                    label: contentLabel,
+                    controller: contentController,
                     required: true,
                     maxLength: 1000,
                     maxLines: 10,
                     validator: (value) {
                       if (value?.isEmpty ?? true) {
-                        return '${state.contentLabel}は必須です。';
+                        return '$contentLabelは必須です。';
                       }
                       return null;
                     },
@@ -78,17 +86,44 @@ class ContactForm extends ConsumerWidget {
               ),
             ),
             KokufuOutlinedButton(
-              onPressed: () {
+              onPressed: () async {
                 if (formKey.currentState!.validate()) {
-                  vm.submit().then(
-                    (result) {
-                      if (result == ContactResult.ok) {
-                        showContactCompleteDialog(context);
-                      } else {
-                        showContactErrorDialog(context);
-                      }
-                    },
+                  final slack = SlackNotifier(
+                    'https://hooks.slack.com/services/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',
                   );
+
+                  final response = await slack.send(
+                    'ホームページへの問合せがありました。',
+                    attachments: [
+                      Attachment(
+                        pretext: '@justice28n',
+                        fields: [
+                          Field(
+                            title: companyNameLabel,
+                            value: companyNameController.text,
+                          ),
+                          Field(
+                            title: contactPersonLabel,
+                            value: contactPersonController.text,
+                          ),
+                          Field(
+                            title: emailLabel,
+                            value: emailController.text,
+                          ),
+                          Field(
+                            title: contentLabel,
+                            value: contentController.text,
+                          ),
+                        ],
+                      ),
+                    ],
+                  );
+                  if (response == 'ok') {
+                    showContactCompleteDialog(context);
+                  } else {
+                    debugPrint(response);
+                    showContactErrorDialog(context);
+                  }
                 }
               },
               child: const Text('送信'),
