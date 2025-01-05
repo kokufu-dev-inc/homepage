@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:homepage/component/app_bar/kokufu_app_bar.dart';
 import 'package:homepage/component/footer.dart';
 import 'package:homepage/component/html/main/main.dart';
-import 'package:homepage/component/side_drawer/side_drawer_about_button.dart';
+import 'package:homepage/component/side_drawer/side_drawer_company_button.dart';
 import 'package:homepage/component/side_drawer/side_drawer_contact_action_button.dart';
 import 'package:homepage/component/side_drawer/side_drawer_home_button.dart';
 import 'package:homepage/pages/about_page/about_title/about_title.dart';
@@ -22,7 +22,7 @@ class AboutViewL extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           SideDrawerHomeButton(),
-          SideDrawerAboutButton(),
+          SideDrawerCompanyButton(),
           SideDrawerContactButton(),
         ],
       ),

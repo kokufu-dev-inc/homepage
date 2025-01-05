@@ -13,6 +13,7 @@ class SideDrawerHomeButton extends StatelessWidget {
         Routes.pop(context);
         Routes.push(context, HomePage.routeName);
       },
+      title: 'HOME',
       label: 'ホーム',
     );
   }

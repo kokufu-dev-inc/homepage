@@ -8,7 +8,7 @@ import 'package:homepage/pages/not_found_page/nor_found_page.dart';
 class Routes {
   static final Map<String, Widget Function(BuildContext)> routes = {
     HomePage.routeName: (context) => const HomePage(),
-    AboutPage.routeName: (context) => const AboutPage(),
+    CompanyPage.routeName: (context) => const CompanyPage(),
     ContactPage.routeName: (context) => const ContactPage(),
     LandingPageFromInstagram.routeName: (context) =>
         const LandingPageFromInstagram(),

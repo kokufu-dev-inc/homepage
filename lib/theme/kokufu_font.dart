@@ -16,6 +16,7 @@ class KokufuFontSize {
   static const double h3 = 26;
   static const double p = 22;
   static const double small = 16;
+  static const double extraSmall = 12;
 
   static responsive({
     required double screenWidth,

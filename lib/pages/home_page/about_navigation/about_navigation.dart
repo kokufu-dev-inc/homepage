@@ -12,7 +12,7 @@ class AboutNavigation extends StatelessWidget {
       subTitle: '会社概要',
       description: '私たちのコンセプトや見据えるビジョン、会社名、所在地、役員、事業内容、資本金など会社の基本情報をまとめてあります。',
       navigationButtonText: '会社概要を見る',
-      navigationRouteName: AboutPage.routeName,
+      navigationRouteName: CompanyPage.routeName,
     );
   }
 }

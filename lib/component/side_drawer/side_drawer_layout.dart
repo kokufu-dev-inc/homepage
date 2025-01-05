@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:homepage/component/html/html_importer.dart';
-import 'package:homepage/component/side_drawer/side_drawer_about_button.dart';
+// import 'package:homepage/component/side_drawer/side_drawer_blogs_button.dart';
+import 'package:homepage/component/side_drawer/side_drawer_company_button.dart';
 import 'package:homepage/component/side_drawer/side_drawer_contact_action_button.dart';
-import 'package:homepage/component/side_drawer/side_drawer_home_button.dart';
+// import 'package:homepage/component/side_drawer/side_drawer_news_button.dart';
+// import 'package:homepage/component/side_drawer/side_drawer_service_button.dart';
+// import 'package:homepage/component/side_drawer/side_drawer_works_button.dart';
 import 'package:homepage/theme/kokufu_colors.dart';
 
 class SideDrawerLayout extends StatelessWidget {
@@ -29,13 +32,25 @@ class SideDrawerLayout extends StatelessWidget {
             ],
           ),
         ),
+        // const SizedBox(
+        //   width: double.infinity,
+        //   child: SideDrawerServiceButton(),
+        // ),
+        // const SizedBox(
+        //   width: double.infinity,
+        //   child: SideDrawerWorksButton(),
+        // ),
+        // const SizedBox(
+        //   width: double.infinity,
+        //   child: SideDrawerNewsButton(),
+        // ),
+        // const SizedBox(
+        //   width: double.infinity,
+        //   child: SideDrawerBlogsButton(),
+        // ),
         const SizedBox(
           width: double.infinity,
-          child: SideDrawerHomeButton(),
-        ),
-        const SizedBox(
-          width: double.infinity,
-          child: SideDrawerAboutButton(),
+          child: SideDrawerCompanyButton(),
         ),
         const SizedBox(
           width: double.infinity,

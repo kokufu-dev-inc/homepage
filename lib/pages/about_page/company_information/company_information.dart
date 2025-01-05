@@ -39,8 +39,16 @@ class CompanyInformation extends StatelessWidget {
             children: [
               TableRow(
                 children: [
-                  _tableCell('会社名'),
+                  _tableCell('社名'),
                   _tableCell('株式会社国富開発'),
+                ],
+              ),
+              TableRow(
+                children: [
+                  _tableCell('所在地'),
+                  _tableCell(
+                    'Nagoya Office\n〒451-0045\n愛知県名古屋市西区名駅一丁目1-17\nダイヤメイテツビル 11階\n【交通アクセス】\n・名古屋駅 徒歩4分\n （JR、名鉄名古屋本線、市営地下鉄東山線・桜通線、近鉄名古屋線、名古屋臨海鉄道あおなみ線）',
+                  ),
                 ],
               ),
               TableRow(
@@ -57,28 +65,9 @@ class CompanyInformation extends StatelessWidget {
               ),
               TableRow(
                 children: [
-                  _tableCell('役員'),
-                  _tableCell('代表取締役　田中 正義'),
-                ],
-              ),
-              TableRow(
-                children: [
-                  _tableCell('従業員数'),
-                  _tableCell('3名（パート・アルバイト含む）'),
-                ],
-              ),
-              TableRow(
-                children: [
                   _tableCell('事業内容'),
-                  _tableCell('スマホアプリ開発'),
-                ],
-              ),
-              TableRow(
-                children: [
-                  _tableCell('住所'),
                   _tableCell(
-                    'Nagoya Office\n〒451-0045\n愛知県名古屋市西区名駅一丁目1-17\nダイヤメイテツビル 11階',
-                  ),
+                      '01. スマホアプリの開発および販売\n02. ウェブサイトの企画、制作、運営\n03. システム開発\n04. クラウドサービスの提供'),
                 ],
               ),
             ],
